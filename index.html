@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Forecast App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Weather Forecast</h1>
+      <div class="controls">
+        <button id="geoBtn" title="Use my location">Use my location</button>
+        <input id="cityInput" type="text" placeholder="Enter city name (e.g., Delhi)" />
+        <button id="searchBtn">Search</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="current card" id="currentCard" aria-live="polite">
+        <div class="loader hidden" id="loader">Loading…</div>
+        <div id="error" class="error hidden"></div>
+
+        <div id="currentContent" class="hidden">
+          <div class="city-row">
+            <h2 id="cityName">—</h2>
+            <div id="localTime" class="muted small"></div>
+          </div>
+
+          <div class="current-grid">
+            <div class="weather-main">
+              <img id="weatherIcon" src="" alt="" />
+              <div>
+                <div id="description" class="muted"></div>
+                <div class="temp" id="temp">-- °C</div>
+              </div>
+            </div>
+
+            <div class="details">
+              <div>Feels like: <span id="feels">-- °C</span></div>
+              <div>Humidity: <span id="humidity">--%</span></div>
+              <div>Wind: <span id="wind">-- m/s</span></div>
+              <div>Pressure: <span id="pressure">-- hPa</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="forecast card" id="forecastCard">
+        <h3>5-Day Forecast</h3>
+        <div id="forecastList" class="forecast-list"></div>
+      </section>
+    </main>
+
+    <footer class="footer muted">
+      Data from OpenWeatherMap · Units: Celsius · Free API
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

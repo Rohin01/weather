@@ -1,0 +1,87 @@
+:root{
+  --bg:#f3f6fb;
+  --card:#ffffff;
+  --accent:#2563eb;
+  --muted:#6b7280;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(15,23,42,0.06);
+  --max-width:1000px;
+  --gap:18px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,#eef4ff, var(--bg));
+  color:#0f172a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:24px;
+}
+
+.app{
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap);
+}
+
+/* Header */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.header h1{margin:0;font-size:1.4rem;}
+.controls{display:flex;gap:8px;align-items:center;}
+.controls input{
+  padding:10px 12px;border-radius:10px;border:1px solid #e6edf6;width:240px;
+}
+.controls button{
+  padding:10px 12px;border-radius:10px;border:none;background:var(--accent);color:white;font-weight:600;cursor:pointer;
+}
+.controls button#geoBtn{background:#0ea5a5}
+
+/* Main layout */
+.main{display:grid;grid-template-columns:1fr 420px;gap:var(--gap);align-items:start}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:16px;
+}
+
+/* Current weather */
+.current-grid{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.weather-main{display:flex;gap:12px;align-items:center}
+.weather-main img{width:84px;height:84px}
+.temp{font-size:2.2rem;font-weight:700}
+.details{font-size:0.95rem;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+
+/* Forecast */
+.forecast-list{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.forecast-item{
+  display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:10px;border:1px solid #f0f4fb;background:#fbfdff;
+}
+.forecast-item .left{display:flex;gap:10px;align-items:center}
+.small-icon{width:44px;height:44px}
+
+/* Loader & error */
+.loader{font-size:0.95rem;color:var(--muted)}
+.hidden{display:none}
+.error{color:#b91c1c;padding:8px;border-radius:8px;background:#fff5f5;border:1px solid #fee2e2;margin-bottom:8px}
+
+/* Footer */
+.footer{font-size:12px;text-align:center;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:900px){
+  .main{grid-template-columns:1fr; }
+  .controls input{width:140px;}
+  .weather-main img{width:64px;height:64px}
+}
